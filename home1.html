@@ -10,26 +10,80 @@
     <!-- tailwind cdn -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- font awesome cdn -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="bg-[#f4f5f7] h-[100vh]">
-    <nav class="min-h-[50px] flex justify-between items-center max-w-lg mx-auto border-b-1 border-gray-400 p-3">
-        <div class="flex justify-center items-center">
-            <img class="h-[50px]" src="./assets/Group.png" alt="">
-            <div class="ml-3">
-                <h1 class="font-bold">$<span>45000</span></h1>
-                <p class="text-[#08080880]">Available Balance</p>
+    <div class=" bg-white rounded-b-xl">
+        <!-- header section -->
+        <nav class="min-h-[50px] flex justify-between items-center max-w-lg mx-auto border-b-1 border-gray-400 p-3">
+            <div class="flex justify-center items-center">
+                <img class="h-[50px]" src="./assets/Group.png" alt="">
+                <div class="ml-3">
+                    <h1 class="font-bold">$<span>45000</span></h1>
+                    <p class="text-[#08080880]">Available Balance</p>
+                </div>
             </div>
-        </div>
-        <button class="btn text-[#08080880]"><i class="fa-solid fa-arrow-right-from-bracket rotate-180"></i>Log Out</button>
-    </nav>
-    <main class="max-w-lg mx-auto mt-8">
-        <h1 class="font-bold text-2xl">🔥 Welcome to Payooo!</h1>
-        <p class="text-[#08080880]">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
-    </main>
-    <footer>
-
+            <button class="btn text-[#08080880]"><i class="fa-solid fa-arrow-right-from-bracket rotate-180"></i>Log
+                Out</button>
+        </nav>
+        <!-- main section -->
+        <main class="max-w-lg mx-auto mt-8 p-3">
+            <h1 class="font-bold text-2xl">🔥 Welcome to Payooo!</h1>
+            <p class="text-[#08080880] p-3">Enjoy easy and convenient financial services with us. Cashout charge is low
+                and </p>
+            <div class="min-h-[200px] grid grid-cols-3 gap-6 p-3">
+                <div class="border-2 border-gray-300 text-center p-3 rounded-2xl">
+                    <img src="./assets/wallet1.png" alt="" class="mx-auto">
+                    <h3>Add Money</h3>
+                </div>
+                <div class="border-2 border-gray-300 text-center p-3 rounded-2xl">
+                    <img src="./assets/send1.png" alt="" class="mx-auto">
+                    <h3>Cashout</h3>
+                </div>
+                <div class="border-2 border-gray-300 text-center p-3 rounded-2xl">
+                    <img src="./assets/money1.png" alt="" class="mx-auto">
+                    <h3>Transfer Money</h3>
+                </div>
+                <div class="border-2 border-gray-300 text-center p-3 rounded-2xl">
+                    <img src="./assets/bonus1.png" alt="" class="mx-auto">
+                    <h3>Get Bonus</h3>
+                </div>
+                <div class="border-2 border-gray-300 text-center p-3 rounded-2xl">
+                    <img src="./assets/purse1.png" alt="" class="mx-auto">
+                    <h3>Pay Bill</h3>
+                </div>
+                <div class="border-2 border-gray-300 text-center p-3 rounded-2xl">
+                    <img src="./assets/transaction1.png" alt="" class="mx-auto">
+                    <h3>Transaction</h3>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- footer section -->
+    <footer class="max-w-lg mx-auto">
+        <!-- form section of add money -->
+        <h1 class="font-bold m-3">Add Money</h1>
+        <form class="bg-white rounded-2xl p-8">
+            <label class="">Select A Bank</label><br>
+            <select class="select input bg-[#f4f5f7] mb-3 mt-2 rounded-3xl w-full">
+                <option disabled selected>Select bank</option>
+                <option>Dutch Bangla Bank</option>
+                <option>Sonali Bank</option>
+                <option>Grameen Bank</option>
+                <option>Brac Bank</option>
+                <option>Islami Bank</option>
+            </select><br>
+            <label for="">Bank Account Number</label><br>
+            <input type="text" placeholder="Enter 11 digit account number" class="input input bg-[#f4f5f7] mt-3 mb-3 rounded-3xl w-full" /><br>
+            <label for="">Amount to Add</label><br>
+            <input type="text" placeholder="Add amount to withdraw" class="input input bg-[#f4f5f7] mt-3 mb-3 rounded-3xl w-full" /><br>
+            <label for="">Pin Number</label><br>
+            <input type="text" placeholder="Enter 4 digit pin number" class="input input bg-[#f4f5f7] mt-3 rounded-3xl w-full" /><br>
+        </form>
+        <button class="btn bg-[#0874F2] w-full rounded-3xl text-white mt-5">Add Money</button>
     </footer>
 </body>
 
