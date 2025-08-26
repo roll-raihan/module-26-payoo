@@ -84,10 +84,22 @@ document.getElementById("cash-out-btn").addEventListener('click', function (e) {
 })
 
 //transfer money button feature
-document.getElementById('transfer-money-button').addEventListener('click', function (e) {
+document.getElementById('transfer-btn').addEventListener('click', function (e) {
     e.preventDefault();
-    const userAccount = getInputValue('user-number')
-    console.log(userAccount);
+    const userAccount = getInputValue('user-number');
+    if (userAccount.length < 11) {
+        alert('Provide valid user number');
+        return;
+    }
+    const transferAmount = getInputValueNumber('transfer-amount');
+    const pinNumber = getInputValueNumber('pin-num-transfer');
+    if(pinNumber !== validPin){
+        alert('Give valid pin');
+        return;
+    }
+    const availableBalance = getInnerText('available-balance');
+    const availableBalanceAfterTransfer = availableBalance - transferAmount;
+    setInnerText(availableBalanceAfterTransfer);
 })
 
 //toggling feature start(add money, cash out, transfer)
