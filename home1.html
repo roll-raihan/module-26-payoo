@@ -47,15 +47,15 @@
                     <img src="./assets/money1.png" alt="" class="mx-auto">
                     <h3>Transfer Money</h3>
                 </div>
-                <div class="form-btn border-2 border-gray-300 text-center p-3 rounded-2xl">
+                <div id="get-bonus-button" class="form-btn border-2 border-gray-300 text-center p-3 rounded-2xl">
                     <img src="./assets/bonus1.png" alt="" class="mx-auto">
                     <h3>Get Bonus</h3>
                 </div>
-                <div class="form-btn border-2 border-gray-300 text-center p-3 rounded-2xl">
+                <div id="pay-bill-button" class="form-btn border-2 border-gray-300 text-center p-3 rounded-2xl">
                     <img src="./assets/purse1.png" alt="" class="mx-auto">
                     <h3>Pay Bill</h3>
                 </div>
-                <div class="form-btn border-2 border-gray-300 text-center p-3 rounded-2xl">
+                <div id="transaction-button" class="form-btn border-2 border-gray-300 text-center p-3 rounded-2xl">
                     <img src="./assets/transaction1.png" alt="" class="mx-auto">
                     <h3>Transaction</h3>
                 </div>
@@ -116,18 +116,39 @@
             <h1 class="font-bold p-3">Transfer Money</h1>
             <div class="bg-white rounded-2xl p-8">
                 <form class="">
-                <label for="">User Account Number</label><br>
-                <input type="text" id="user-number" placeholder="Enter 11 digit number"
-                    class="input input bg-[#f4f5f7] mt-3 mb-3 rounded-3xl w-full" /><br>
-                <label for="">Amount</label><br>
-                <input type="text" id="transfer-amount" placeholder="Enter amount to withdraw"
-                    class="input input bg-[#f4f5f7] mt-3 mb-3 rounded-3xl w-full" /><br>
-                <label for="">Pin Number</label><br>
-                <input type="text" id="pin-num-transfer" placeholder="Enter 4 digit pin number"
-                    class="input input bg-[#f4f5f7] mt-3 rounded-3xl w-full" /><br>
-            </form>
-            <button id="transfer-btn" class="btn bg-[#0874F2] w-full rounded-3xl text-white mt-5">Send Now</button>
+                    <label for="">User Account Number</label><br>
+                    <input type="text" id="user-number" placeholder="Enter 11 digit number"
+                        class="input input bg-[#f4f5f7] mt-3 mb-3 rounded-3xl w-full" /><br>
+                    <label for="">Amount</label><br>
+                    <input type="text" id="transfer-amount" placeholder="Enter amount to withdraw"
+                        class="input input bg-[#f4f5f7] mt-3 mb-3 rounded-3xl w-full" /><br>
+                    <label for="">Pin Number</label><br>
+                    <input type="text" id="pin-num-transfer" placeholder="Enter 4 digit pin number"
+                        class="input input bg-[#f4f5f7] mt-3 rounded-3xl w-full" /><br>
+                </form>
+                <button id="transfer-btn" class="btn bg-[#0874F2] w-full rounded-3xl text-white mt-5">Send Now</button>
             </div>
+        </div>
+        <!-- form section of get bonus -->
+        <div class="form" id="get-bonus-parent" style="display: none;">
+            <h1 class="font-bold p-3">Get Bonus</h1>
+            <div class="bg-white rounded-2xl p-8">
+                <form class="">
+                    <label for="">Enter Bonus Coupon</label><br>
+                    <input type="text" id="bonus-coupon" placeholder="Enter your coupon"
+                        class="input input bg-[#f4f5f7] mt-3 mb-3 rounded-3xl w-full" />
+                </form>
+                <button id="get-bonus-btn" class="btn bg-[#0874F2] w-full rounded-3xl text-white mt-5">Get
+                    bonus</button>
+            </div>
+        </div>
+        <!-- form section to pay bill -->
+        <div class="form" id="pay-bill-parent" style="display: none;">
+            <h1 class="font-bold p-3">Pay Bill</h1>
+        </div>
+        <!-- form section to transaction -->
+         <div class="form" id="transaction-parent" style="display: none;">
+            <h1 class="font-bold p-3">Transaction</h1>
         </div>
     </footer>
     <script src="./home.js"></script>

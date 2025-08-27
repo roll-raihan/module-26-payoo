@@ -27,6 +27,17 @@ function handleToggle(id) {
     }
     document.getElementById(id).style.display = 'block';
 }
+//function for toggle buttons
+function handleToggleButton(id) {
+    const formBtns = document.getElementsByClassName('form-btn');
+
+    for (const btn of formBtns) {
+        btn.classList.remove("border-[#0874f2]", "bg-[#0874f20d]");
+        btn.classList.add("border-gray-300")
+    }
+    document.getElementById(id).classList.add("border-[#0874f2]", "bg-[#0874f20d]");
+    document.getElementById(id).classList.remove("border-gray-300");
+}
 //add money btn feature
 document.getElementById('add-money-btn')
     .addEventListener('click', function (e) {
@@ -93,7 +104,7 @@ document.getElementById('transfer-btn').addEventListener('click', function (e) {
     }
     const transferAmount = getInputValueNumber('transfer-amount');
     const pinNumber = getInputValueNumber('pin-num-transfer');
-    if(pinNumber !== validPin){
+    if (pinNumber !== validPin) {
         alert('Give valid pin');
         return;
     }
@@ -101,8 +112,16 @@ document.getElementById('transfer-btn').addEventListener('click', function (e) {
     const availableBalanceAfterTransfer = availableBalance - transferAmount;
     setInnerText(availableBalanceAfterTransfer);
 })
+//get bonus button feature
+//code: here
 
-//toggling feature start(add money, cash out, transfer)
+//pay bill button feature
+//code: here
+
+//transaction button feature
+//code:here
+
+//toggling feature start
 //add-money
 document.getElementById('add-money-button').addEventListener("click", function () {
     //without using function.....    
@@ -113,14 +132,35 @@ document.getElementById('add-money-button').addEventListener("click", function (
     // 1.document.getElementById('add-money-parent').style.display = 'block';
 
     handleToggle('add-money-parent');
+    //btn design
+    handleToggleButton('add-money-button');
 })
 //cash-out
 document.getElementById('cash-out-button').addEventListener("click", function () {
 
     handleToggle('cash-out-parent');
+    //btn design
+    handleToggleButton('cash-out-button');
 })
 //transfer
 document.getElementById("transfer-money-button").addEventListener('click', function () {
 
     handleToggle('transfer-money-parent');
+    //btn design
+    handleToggleButton('transfer-money-button');
 })
+//get bonus
+document.getElementById("get-bonus-button").addEventListener('click', function () {
+
+    handleToggle('get-bonus-parent');
+    //btn design
+    handleToggleButton('get-bonus-button');
+})
+//Pay Bill
+document.getElementById("pay-bill-button").addEventListener('click', function () {
+
+    handleToggle('pay-bill-parent');
+    //btn design
+    handleToggleButton('pay-bill-button');
+})
+//Transaction
