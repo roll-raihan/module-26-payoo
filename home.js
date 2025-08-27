@@ -1,4 +1,5 @@
 const validPin = 1234;
+const transactionData = [];
 //create reusable function to get input value
 function getInputValueNumber(id) {
     const inputFieldNumber = parseInt(document.getElementById(id).value);
@@ -51,6 +52,11 @@ document.getElementById('add-money-btn')
         //normal process and reusable process
         // const addAmount = parseInt(document.getElementById('add-amount').value);
         const addAmount = getInputValueNumber('add-amount');
+        //validation
+        if (addAmount <= 0) {
+            alert('Invalid amount');
+            return;
+        }
 
         const pinNumber = getInputValueNumber('pin-num-add');
 
@@ -67,6 +73,13 @@ document.getElementById('add-money-btn')
         }
         const availableBalanceAfterAdd = availableBalance + addAmount;
         setInnerText(availableBalanceAfterAdd);
+
+        // for transaction history
+        const data = {
+            name: "Add Money",
+            date: new Date().toLocaleTimeString()
+        }
+        transactionData.push(data);
     })
 //cash out btn feature
 document.getElementById("cash-out-btn").addEventListener('click', function (e) {
@@ -90,8 +103,20 @@ document.getElementById("cash-out-btn").addEventListener('click', function (e) {
 
     //available balance adding and changing
     const availableBalance = getInnerText('available-balance');
+    //validation
+    if (cashOutAmount <= 0 || cashOutAmount > availableBalance) {
+        alert('Invalid amount');
+        return;
+    }
     const availableBalanceAfterCashout = availableBalance - cashOutAmount;
     setInnerText(availableBalanceAfterCashout);
+
+    // for transaction history
+    const data = {
+        name: "Cash Out",
+        date: new Date().toLocaleTimeString()
+    }
+    transactionData.push(data);
 })
 
 //transfer money button feature
@@ -111,6 +136,13 @@ document.getElementById('transfer-btn').addEventListener('click', function (e) {
     const availableBalance = getInnerText('available-balance');
     const availableBalanceAfterTransfer = availableBalance - transferAmount;
     setInnerText(availableBalanceAfterTransfer);
+
+    // for transaction history
+    const data = {
+        name: "Cash Out",
+        date: new Date().toLocaleTimeString
+    }
+    transactionData.push(data);
 })
 //get bonus button feature
 //code: here
@@ -120,6 +152,33 @@ document.getElementById('transfer-btn').addEventListener('click', function (e) {
 
 //transaction button feature
 //code:here
+
+//to activate history for activities(dynamic)
+document.getElementById('transaction-button').addEventListener('click', function () {
+    const transactionContainer = document.getElementById('transaction-container');
+    //to stop repeat of dynamic history
+    transactionContainer.innerText = "";
+
+    for (const data of transactionData) {
+        const div = document.createElement("div");
+        div.innerHTML = `
+        <div class="flex items-center justify-between bg-white rounded-xl p-3 mt-3">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-[#f4f5f7]"><img src="./assets/wallet1.png" alt=""
+                                class="mx-auto"></div>
+
+                        <div class="ml-3">
+                            <h1>${data.name}</h1>
+                            <p>${data.date}</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+        `
+        transactionContainer.appendChild(div)
+    }
+
+})
 
 //toggling feature start
 //add-money
@@ -164,3 +223,9 @@ document.getElementById("pay-bill-button").addEventListener('click', function ()
     handleToggleButton('pay-bill-button');
 })
 //Transaction
+document.getElementById("transaction-button").addEventListener('click', function () {
+
+    handleToggle('transaction-parent');
+    //btn design
+    handleToggleButton('transaction-button');
+})

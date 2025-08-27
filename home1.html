@@ -15,7 +15,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="bg-[#f4f5f7] h-[100vh]">
+<body class="bg-[#f4f5f7] ">
     <div class=" bg-white rounded-b-xl">
         <!-- header section -->
         <nav class="min-h-[50px] flex justify-between items-center max-w-lg mx-auto border-b-1 border-gray-400 p-3">
@@ -57,7 +57,7 @@
                 </div>
                 <div id="transaction-button" class="form-btn border-2 border-gray-300 text-center p-3 rounded-2xl">
                     <img src="./assets/transaction1.png" alt="" class="mx-auto">
-                    <h3>Transaction</h3>
+                    <h3>Transactions</h3>
                 </div>
             </div>
         </main>
@@ -142,15 +142,34 @@
                     bonus</button>
             </div>
         </div>
-        <!-- form section to pay bill -->
+        <!-- form section of pay bill -->
         <div class="form" id="pay-bill-parent" style="display: none;">
             <h1 class="font-bold p-3">Pay Bill</h1>
         </div>
-        <!-- form section to transaction -->
-         <div class="form" id="transaction-parent" style="display: none;">
-            <h1 class="font-bold p-3">Transaction</h1>
+        <!-- form section of transaction -->
+        <div class="form" id="transaction-parent" style="display: none;">
+            <div class="flex justify-between items-center">
+                <h1 class="font-bold p-3">Transaction History</h1>
+                <p class="text-[#08080880]">View All</p>
+            </div>
+            <!-- work in progress -->
+            <div id="transaction-container">
+                <!-- <div class="flex items-center justify-between bg-white rounded-xl p-3">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-[#f4f5f7]"><img src="./assets/wallet1.png" alt=""
+                                class="mx-auto"></div>
+
+                        <div class="ml-3">
+                            <h1>Electricity Bill</h1>
+                            <p>Today 01:44 AM</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div> -->
+            </div>
         </div>
     </footer>
+
     <script src="./home.js"></script>
 </body>
 
